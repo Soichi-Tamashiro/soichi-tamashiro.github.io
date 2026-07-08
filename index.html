@@ -84,7 +84,29 @@
   .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);border-radius:2px}
   .nav .btn{padding:7px 14px;font-size:12.5px;flex:none}
   .nav .btn svg{width:13px;height:13px}
-  @media (max-width:660px){.nav-links{display:none}}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .nav-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    width:40px;height:40px;background:none;border:1px solid var(--line);border-radius:8px;cursor:pointer;padding:0}
+  .nav-toggle .bar{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+  .nav.open .nav-toggle .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .nav.open .nav-toggle .bar:nth-child(2){opacity:0}
+  .nav.open .nav-toggle .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  @media (max-width:660px){
+    .nav-toggle{display:flex}
+    .nav-links{
+      position:absolute;top:56px;left:0;right:0;z-index:49;
+      flex-direction:column;justify-content:flex-start;gap:0;flex:none;
+      background:rgba(14,17,22,.97);
+      -webkit-backdrop-filter:saturate(160%) blur(12px);backdrop-filter:saturate(160%) blur(12px);
+      border-bottom:1px solid var(--line);padding:6px 0 12px;
+      opacity:0;transform:translateY(-10px);pointer-events:none;
+      transition:opacity .2s ease,transform .2s ease;
+    }
+    .nav.open .nav-links{opacity:1;transform:none;pointer-events:auto}
+    .nav-links a{width:100%;padding:13px 24px;font-size:13px}
+    .nav-links a.active{color:var(--accent)}
+    .nav-links a.active::after{display:none}
+  }
 
   /* ---------- Icon links ---------- */
   .social{display:flex;align-items:center;gap:10px}
@@ -124,7 +146,7 @@
     .pulse path{animation:none;stroke-dashoffset:0}
     html{scroll-behavior:auto}
     .btn:hover,.card:hover,.iconlink:hover{transform:none}
-    html.js .reveal{opacity:1;transform:none;transition:none}
+    html.js .reveal,html.js .reveal-card{opacity:1;transform:none;transition:none}
   }
   .role{
     font-family:"Bricolage Grotesque",sans-serif;
@@ -193,17 +215,37 @@
   .early{color:var(--muted);font-style:italic;font-size:14.5px;margin-top:26px}
 
   /* ---------- Project cards ---------- */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  #projects .wrap{max-width:1000px}
+  .cards{display:grid;grid-template-columns:1fr;gap:18px}
+  @media (min-width:600px){.cards{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:960px){.cards{grid-template-columns:repeat(3,1fr)}}
   .card{
     background:var(--surface);border:1px solid var(--line);border-radius:8px;
     padding:24px 24px 20px;display:flex;flex-direction:column;gap:10px;
     transition:border-color .15s,transform .15s;
   }
+  .card{-webkit-tap-highlight-color:transparent}
   .card:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
   .card .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
   .card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:18px;line-height:1.25}
   .card p{color:#B9BEC6;font-size:14.5px;flex-grow:1}
-  .card .links{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin-top:4px}
+  .card .links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin-top:6px}
+  .card .links .linkicon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:36px;height:36px;border:1px solid var(--line);border-radius:8px;
+    color:var(--muted);background:var(--surface-2);
+    transition:color .15s,border-color .15s,transform .15s;
+  }
+  .card .links .linkicon:hover,.card .links .linkicon:focus-visible{color:var(--accent);border-color:var(--accent-dim);transform:translateY(-1px)}
+  .card .links .linkicon svg{width:17px;height:17px}
+  @media (hover:none){.card:active{transform:scale(.99)}}
+  @media (max-width:600px){.card .links .linkicon{width:44px;height:44px}}
+  /* staggered card reveal */
+  html.js .reveal-card{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+  html.js .reveal-card.in{opacity:1;transform:none}
+  .cards .reveal-card:nth-child(2){transition-delay:.07s}
+  .cards .reveal-card:nth-child(3){transition-delay:.14s}
+  .cards .reveal-card:nth-child(5){transition-delay:.07s}
 
   /* ---------- Skills ---------- */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 40px;max-width:76ch}
@@ -236,17 +278,22 @@
 <nav class="nav" aria-label="Primary">
   <div class="wrap nav-inner">
     <a class="brand" href="#" aria-label="Soichi Tamashiro — top">ST<span class="dot">.</span></a>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="#about">Profile</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-      CV
-    </a>
+    <div class="nav-right">
+      <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        CV
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -297,7 +344,7 @@
 <section id="about" class="reveal">
   <div class="wrap">
     <h2>Profile</h2>
-    <p class="lead">I lead a <b>10-person cross-functional engineering team</b> and 3–6 concurrent projects at Universidad Ricardo Palma (15,000+ students), directing <b>Campus URP</b> — the university's core academic platform — from requirements and architecture through CI/CD, cloud and on-premise deployment, to production support, compliance, and national accreditation.</p>
+    <p class="lead">I lead a <b>10-person cross-functional engineering team</b> and 3–6 concurrent projects at Universidad Ricardo Palma (15,000+ students, faculty &amp; staff), directing <b>Campus URP</b> — the university's core academic platform — from requirements and architecture through CI/CD, cloud and on-premise deployment, to production support, compliance, and national accreditation.</p>
     <p class="lead">Hands-on backend engineer (Python, Java, Node) turned delivery leader: I hire, mentor, own budgets, and can still challenge an architecture decision line by line. <b>IEEE-published researcher</b> with three projects covered in national media, and co-founder of a national startup-competition winner. Available for EU-hours remote work as an independent contractor.</p>
     <div class="statband">
       <div class="stat"><span class="n">10</span><span class="l">engineers led</span></div>
@@ -320,7 +367,7 @@
       </div>
       <p class="job-dates">Aug 2023 – Present · Lima, Peru</p>
       <ul>
-        <li><b>Direct Campus URP (formerly Yachayhuasi)</b>, the university's core academic platform serving 15,000+ students in 8 faculties — featured in El Comercio. Backend analyst on the original build, promoted to TPM post-launch to lead its consolidation and expansion.</li>
+        <li><b>Direct Campus URP (formerly Yachayhuasi)</b>, the university's core academic platform serving a 15,000+ community — students, faculty, and administrative staff — across 8 faculties, featured in El Comercio. Backend analyst on the original build, promoted to TPM post-launch to lead its consolidation and expansion.</li>
         <li><b>Led the platform's complete rework, owning requirements and architecture</b> — replaced a 20-year-old legacy system; cut administrative workload 50% and improved task-completion times ~300%.</li>
         <li><b>Delivered a university-wide evaluations system</b> (in production): automated grade validation, three-level approval workflow, full audit trail — Java 17/Spring Boot, React, SQL Server.</li>
         <li><b>Delivered the undergraduate medicine hospital-program system</b> (in production); leading the internado and medical-residency platforms, both subject to national health-education legislation.</li>
@@ -395,7 +442,7 @@
     <h2>Projects &amp; Recognition</h2>
     <div class="cards">
 
-      <div class="card">
+      <div class="card reveal-card">
         <span class="tag">National press · IEEE</span>
         <h3>HIRO — Tsunami Early-Warning Receiver</h3>
         <p>First tsunami alert reception system made in Peru. Joint ELOGIC–PUCP project funded by Innóvate Perú.</p>
@@ -410,12 +457,12 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card reveal-card">
         <span class="tag">National press</span>
         <h3>Campus URP / Yachayhuasi</h3>
         <p>Core academic platform of Universidad Ricardo Palma. Replaced a system in service for over two decades; launch covered by El Comercio (2023).</p>
         <div class="stats">
-          <div class="stat"><span class="n">15K+</span><span class="l">students</span></div>
+          <div class="stat"><span class="n">15K+</span><span class="l">community</span></div>
           <div class="stat"><span class="n">8</span><span class="l">faculties</span></div>
           <div class="stat"><span class="n">50%</span><span class="l">admin workload cut</span></div>
         </div>
@@ -425,7 +472,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card reveal-card">
         <span class="tag">Health-tech · UPCH feature</span>
         <h3>INSPIRA — Respiratory Monitoring</h3>
         <p>Bluetooth measurement device, mobile app, and admin panel built with biomedical research groups at Univ. Cayetano Heredia and PUCP. Active and publicly featured (2025).</p>
@@ -435,17 +482,25 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card reveal-card">
         <span class="tag">iOS · Android · Flutter</span>
         <h3>URP Móvil — Official University Apps</h3>
-        <p>The university's official mobile apps for 15,000+ students — enrollment, schedules, and academic data, connected to Campus URP. Built and maintained under my direction; I own the store presence end-to-end (DUNS, Apple institutional fee waiver; Huawei AppGallery in progress).</p>
+        <p>The university's official mobile apps — used by students, faculty, and administrative staff for enrollment, schedules, and academic data, connected to Campus URP. Built and maintained under my direction; I own the store presence end-to-end (DUNS, Apple institutional fee waiver; Huawei AppGallery in progress).</p>
+        <div class="stats">
+          <div class="stat"><span class="n">15K+</span><span class="l">students, faculty &amp; staff</span></div>
+          <div class="stat"><span class="n">iOS · Android</span><span class="l">official apps</span></div>
+        </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=pe.edu.urp.urp_app" rel="noopener">Google Play</a>
-          <a href="https://apps.apple.com/pe/app/urp-movil/id6749589812" rel="noopener">App Store</a>
+          <a class="linkicon" href="https://play.google.com/store/apps/details?id=pe.edu.urp.urp_app" rel="noopener" aria-label="URP Móvil on Google Play" title="Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.53.85l14.5-9.5a1 1 0 0 0 0-1.7L5.53 1.65A1 1 0 0 0 4 2.5z"/></svg>
+          </a>
+          <a class="linkicon" href="https://apps.apple.com/pe/app/urp-movil/id6749589812" rel="noopener" aria-label="URP Móvil on the App Store" title="App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.54c-.02-2.02 1.65-2.98 1.72-3.03-.94-1.37-2.4-1.56-2.92-1.58-1.24-.13-2.42.73-3.05.73-.63 0-1.6-.71-2.63-.69-1.35.02-2.6.79-3.29 2-1.4 2.43-.36 6.03 1 8.01.67.96 1.46 2.04 2.5 2 1-.04 1.38-.65 2.59-.65 1.21 0 1.55.65 2.61.63 1.08-.02 1.76-.98 2.42-1.95.76-1.11 1.08-2.19 1.09-2.24-.02-.01-2.09-.8-2.11-3.18zM15.09 6.05c.55-.67.92-1.6.82-2.53-.79.03-1.75.53-2.32 1.2-.51.58-.96 1.53-.84 2.44.88.07 1.79-.45 2.34-1.11z"/></svg>
+          </a>
         </div>
       </div>
 
-      <div class="card">
+      <div class="card reveal-card">
         <span class="tag">Startup Perú 2023 winner</span>
         <h3>Motorongo — Green Mobility for the Amazon</h3>
         <p>Ride-hailing platform for the Peruvian Amazon that funds reforestation with every trip. Co-founded and architected end-to-end: backend, database, and passenger/driver Android apps. Won Startup Perú as Terabike (Tera Technologies).</p>
@@ -455,8 +510,12 @@
           <div class="stat"><span class="n">3</span><span class="l">engineers led</span></div>
         </div>
         <div class="links">
-          <a href="https://play.google.com/store/apps/details?id=pe.motorongo.motorongo" rel="noopener">Google Play</a>
-          <a href="https://www.facebook.com/motorongoperu/" rel="noopener">Facebook</a>
+          <a class="linkicon" href="https://play.google.com/store/apps/details?id=pe.motorongo.motorongo" rel="noopener" aria-label="Motorongo on Google Play" title="Google Play">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.53.85l14.5-9.5a1 1 0 0 0 0-1.7L5.53 1.65A1 1 0 0 0 4 2.5z"/></svg>
+          </a>
+          <a class="linkicon" href="https://www.facebook.com/motorongoperu/" rel="noopener" aria-label="Motorongo on Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+          </a>
         </div>
       </div>
 
@@ -516,7 +575,7 @@
   var root=document.documentElement;
   root.classList.add('js');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var reveals=[].slice.call(document.querySelectorAll('.reveal'));
+  var reveals=[].slice.call(document.querySelectorAll('.reveal, .reveal-card'));
   if(reduce||!('IntersectionObserver'in window)){
     reveals.forEach(function(el){el.classList.add('in');});
   }else{
@@ -540,6 +599,20 @@
       });
     },{rootMargin:'-45% 0px -50% 0px',threshold:0});
     secs.forEach(function(s){so.observe(s);});
+  }
+  // mobile menu toggle
+  var nav=document.querySelector('.nav');
+  var toggle=document.querySelector('.nav-toggle');
+  if(nav&&toggle){
+    var setOpen=function(open){
+      nav.classList.toggle('open',open);
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+    };
+    toggle.addEventListener('click',function(){setOpen(!nav.classList.contains('open'));});
+    links.forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+    document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))setOpen(false);});
   }
 })();
 </script>

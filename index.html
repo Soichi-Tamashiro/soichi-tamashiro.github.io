@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soichi Tamashiro — Technical Project Manager | Engineering Manager</title>
+<meta name="description" content="Technical Project Manager / Engineering Manager. 10+ years in software delivery, legacy modernization, and engineering leadership. IEEE-published; Startup Perú 2023 winner. Remote — EU hours.">
+<link rel="canonical" href="https://soichi-tamashiro.github.io/">
+
+<!-- Social / link-preview cards -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Soichi Tamashiro — Technical Project Manager | Engineering Manager">
+<meta property="og:description" content="10+ years in software delivery, legacy modernization, and engineering leadership. IEEE-published; Startup Perú 2023 winner. Remote — EU hours.">
+<meta property="og:url" content="https://soichi-tamashiro.github.io/">
+<meta property="og:image" content="https://soichi-tamashiro.github.io/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Soichi Tamashiro — Technical Project Manager | Engineering Manager">
+<meta name="twitter:description" content="10+ years in software delivery, legacy modernization, and engineering leadership. IEEE-published; Startup Perú 2023 winner. Remote — EU hours.">
+<meta name="twitter:image" content="https://soichi-tamashiro.github.io/assets/og-card.png">
+
+<!-- Favicon: ST monogram in the site's gold accent -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230E1116'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='33' font-weight='700' fill='%23E0A93E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1116;
+    --surface:#161B22;
+    --surface-2:#1C232C;
+    --text:#E6E4DD;
+    --muted:#8B93A1;
+    --accent:#E0A93E;
+    --accent-dim:#9A742B;
+    --line:#262D37;
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+  a:hover,a:focus-visible{border-bottom-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  /* ---------- Download CV button ---------- */
+  .btn{
+    background:var(--accent);color:#0E1116;font-weight:600;
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    padding:9px 18px;border-radius:6px;border-bottom:none;
+    display:inline-flex;align-items:center;gap:8px;font-size:14px;
+    transition:background .15s,transform .15s;
+  }
+  .btn:hover,.btn:focus-visible{background:#EDBA55;border-bottom:none;transform:translateY(-1px)}
+  .btn svg{width:15px;height:15px}
+
+  /* ---------- Hero ---------- */
+  header{padding:88px 0 56px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:18px;
+  }
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:clamp(38px,7vw,64px);
+    line-height:1.04;letter-spacing:-.015em;
+  }
+  .pulse{display:block;width:min(420px,80%);height:36px;margin:18px 0 22px}
+  .pulse path{
+    fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;
+    stroke-dasharray:640;stroke-dashoffset:640;
+    animation:draw 2.2s ease-out .3s forwards;
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){
+    .pulse path{animation:none;stroke-dashoffset:0}
+    html{scroll-behavior:auto}
+    .btn:hover,.card:hover{transform:none}
+  }
+  .role{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:600;font-size:clamp(18px,3vw,24px);
+    color:var(--text);margin-bottom:12px;
+  }
+  .meta{color:var(--muted);font-size:15px;max-width:60ch}
+  .contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:13.5px}
+  .contact-row span{color:var(--muted)}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  h2{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:28px;
+  }
+  h2::before{content:"// ";color:var(--accent-dim)}
+  .lead{font-size:17.5px;max-width:68ch}
+  .lead b{color:var(--text);font-weight:600}
+  .lead + .lead{margin-top:14px}
+
+  /* ---------- Experience ---------- */
+  .job{margin-bottom:36px}
+  .job:last-child{margin-bottom:0}
+  .job-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:4px}
+  .job-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:19px}
+  .job-org{color:var(--muted);font-size:15.5px}
+  .job-dates{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .job ul{list-style:none;max-width:72ch}
+  .job li{padding-left:20px;position:relative;margin-bottom:9px;color:#C7CBD1;font-size:15.5px}
+  .job li::before{content:"–";position:absolute;left:0;color:var(--accent-dim)}
+  .job li b{color:var(--text);font-weight:600}
+  .early{color:var(--muted);font-style:italic;font-size:14.5px;margin-top:26px}
+
+  /* ---------- Project cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:8px;
+    padding:24px 24px 20px;display:flex;flex-direction:column;gap:10px;
+    transition:border-color .15s,transform .15s;
+  }
+  .card:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
+  .card .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:18px;line-height:1.25}
+  .card p{color:#B9BEC6;font-size:14.5px;flex-grow:1}
+  .card .links{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin-top:4px}
+
+  /* ---------- Skills ---------- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 40px;max-width:76ch}
+  .skill-row{padding:12px 0;border-bottom:1px dashed var(--line)}
+  .skill-row .k{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
+  .skill-row .v{color:#C7CBD1;font-size:14.5px}
+
+  /* ---------- Education / footer ---------- */
+  .edu{max-width:72ch}
+  .edu-item{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .edu-item .d{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted)}
+  .edu-item .t b{font-weight:600}
+  .edu-item .t span{color:var(--muted)}
+  footer{padding:56px 0 72px}
+  footer .big{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+    font-size:clamp(22px,4vw,30px);margin-bottom:18px;max-width:24ch;line-height:1.25;
+  }
+  .langs{margin-top:26px;color:var(--muted);font-size:14px;font-family:"IBM Plex Mono",monospace}
+
+  @media (max-width:560px){
+    header{padding:64px 0 44px}
+    section{padding:44px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Lima, Peru (UTC-5) · Remote — ~4h daily overlap with CET</p>
+    <h1>Soichi Tamashiro</h1>
+    <svg class="pulse" viewBox="0 0 420 36" aria-hidden="true">
+      <path d="M0 22 H90 L104 22 112 8 122 30 130 22 H210 L224 22 232 4 244 32 252 22 H340 L352 22 358 14 364 26 370 22 H420"/>
+    </svg>
+    <p class="role">Technical Project Manager&ensp;|&ensp;Engineering Manager</p>
+    <p class="meta">10+ years across software delivery, legacy modernization, and engineering leadership. I turn business needs into software running in production — coordinating people, technical decisions, and infrastructure.</p>
+    <div class="contact-row">
+      <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Download CV (PDF)
+      </a>
+      <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
+      <a href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener">linkedin.com/in/soichi-tamashiro</a>
+      <!-- Add when your GitHub has public repos to show: <a href="https://github.com/Soichi-Tamashiro" rel="noopener">github.com/Soichi-Tamashiro</a> -->
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>Profile</h2>
+    <p class="lead">I lead a <b>10-person cross-functional engineering team</b> and 3–6 concurrent projects at Universidad Ricardo Palma (15,000+ students), directing <b>Campus URP</b> — the university's core academic platform — from requirements and architecture through CI/CD, cloud and on-premise deployment, to production support, compliance, and national accreditation.</p>
+    <p class="lead">Hands-on backend engineer (Python, Java, Node) turned delivery leader: I hire, mentor, own budgets, and can still challenge an architecture decision line by line. <b>IEEE-published researcher</b> with three projects covered in national media, and co-founder of a national startup-competition winner. Available for EU-hours remote work as an independent contractor.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Technical Project Manager <span style="color:var(--muted);font-weight:400">(Engineering Manager scope)</span></span>
+        <span class="job-org">Universidad Ricardo Palma</span>
+      </div>
+      <p class="job-dates">Aug 2023 – Present · Lima, Peru</p>
+      <ul>
+        <li><b>Direct Campus URP (formerly Yachayhuasi)</b>, the university's core academic platform serving 15,000+ students in 8 faculties — featured in El Comercio. Backend analyst on the original build, promoted to TPM post-launch to lead its consolidation and expansion.</li>
+        <li><b>Led the platform's complete rework, owning requirements and architecture</b> — replaced a 20-year-old legacy system; cut administrative workload 50% and improved task-completion times ~300%.</li>
+        <li><b>Delivered a university-wide evaluations system</b> (in production): automated grade validation, three-level approval workflow, full audit trail — Java 17/Spring Boot, React, SQL Server.</li>
+        <li><b>Delivered the undergraduate medicine hospital-program system</b> (in production); leading the internado and medical-residency platforms, both subject to national health-education legislation.</li>
+        <li><b>Supervised delivery of an on-premise AI assistant</b> — RAG over locally served LLMs, role-based authorization, tamper-evident auditing; no data leaves university infrastructure.</li>
+        <li><b>Leading the migration to a Keycloak-based IAM platform</b>; own the university's Flutter mobile apps and app-store presence end-to-end (DUNS, Apple institutional fee waiver).</li>
+        <li><b>Hire, lead, and mentor a mixed-seniority team</b>; manage hiring, app-store, integration, and AI/LLM budgets, defending cases before the university's budget office.</li>
+        <li><b>Cut delivery times up to 80%</b> with a per-project hybrid framework (Agile sprints, design thinking, waterfall gates); own SUNEDU accreditation and security-compliance documentation.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Senior Analyst</span>
+        <span class="job-org">Universidad Ricardo Palma</span>
+      </div>
+      <p class="job-dates">Nov 2022 – Aug 2023 · Lima, Peru</p>
+      <ul>
+        <li><b>Reduced load times by 90%</b> on systems serving student and academic-cycle data by replacing legacy backends; UI revamp with UX team lifted engagement 30%.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Co-Founder &amp; CTO</span>
+        <span class="job-org">Motorongo (formerly Terabike)</span>
+      </div>
+      <p class="job-dates">Nov 2022 – Present · Pucallpa, Peru</p>
+      <ul>
+        <li><b>Winner of Startup Perú 2023</b> (ProInnóvate, Ministry of Production). Green-mobility ride-hailing platform for the Peruvian Amazon that funds reforestation with each trip. Architected the backend, database, and Android apps; built the product 0→1 and led 3 engineers.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Backend Developer</span>
+        <span class="job-org">Nirex — logistics platform</span>
+      </div>
+      <p class="job-dates">Aug 2021 – Nov 2022 · Remote (EU/LATAM distributed team)</p>
+      <ul>
+        <li>Integrated <b>MercadoPago</b> payment processing; built a subscription-tier-based shipping feature end-to-end, surfaced in the driver app (Kotlin).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Developer</span>
+        <span class="job-org">Robotic Air Systems</span>
+      </div>
+      <p class="job-dates">May 2019 – Jan 2021 · Lima, Peru</p>
+      <ul>
+        <li><b>Reduced data pre-processing time by 99%</b> with an automated geotagging system for aerial photography.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">R&amp;D Researcher</span>
+        <span class="job-org">ELOGIC — Tecnologías de Radiodifusión del Perú</span>
+      </div>
+      <p class="job-dates">Mar 2016 – May 2019 · Lima, Peru</p>
+      <ul>
+        <li>Co-developed <b>HIRO, the first tsunami early-warning receiver made in Peru</b> (EWBS signal; ELOGIC–PUCP, funded by Innóvate Perú) — published in IEEE Xplore, covered by El Comercio.</li>
+      </ul>
+    </div>
+
+    <p class="early">Independent consulting 2020–2021: <a href="#projects">INSPIRA</a> (respiratory monitoring, featured below) plus proprietary systems commissioned by each client — RiverPharma (pharma distribution platform), AlphaLytics (serverless auth on GCP), and Zeus Maritime (ERP technical advisory). Earlier roles 2014–2016 in technical support engineering.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects &amp; Recognition</h2>
+    <div class="cards">
+
+      <div class="card">
+        <span class="tag">National press · IEEE</span>
+        <h3>HIRO — Tsunami Early-Warning Receiver</h3>
+        <p>First tsunami alert reception system made in Peru, able to warn up to 20 minutes before coastal impact. Joint ELOGIC–PUCP project funded by Innóvate Perú.</p>
+        <div class="links">
+          <a href="https://elcomercio.pe/tecnologia/actualidad/hiro-primer-sistema-recepcion-aplicacion-alerta-tsunamis-hecho-peru-noticia-637788-noticia/" rel="noopener">El Comercio</a>
+          <a href="https://cris.pucp.edu.pe/es/publications/implementation-of-tsunami-early-warning-receiver-via-the-ewbs-sig/" rel="noopener">IEEE publication</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">National press</span>
+        <h3>Campus URP / Yachayhuasi</h3>
+        <p>Core academic platform of Universidad Ricardo Palma — 15,000+ students, 8 faculties. Replaced a system in service for over two decades; launch covered by El Comercio (2023).</p>
+        <div class="links">
+          <a href="https://suplementos.elcomercio.pe/propuesta-urp-154/2023/08/25/yachayhuasi-la-nueva-plataforma-educativa/" rel="noopener">El Comercio (2023)</a>
+          <span style="color:var(--muted)">Directed since 2023</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Health-tech · UPCH feature</span>
+        <h3>INSPIRA — Respiratory Monitoring</h3>
+        <p>Bluetooth measurement device, mobile app, and admin panel built with biomedical research groups at Univ. Cayetano Heredia and PUCP. Active and publicly featured (2025).</p>
+        <div class="links">
+          <a href="https://cayetano.plus/proyecto-inspira/" rel="noopener">Cayetano+</a>
+          <a href="https://investigacion.cayetano.edu.pe/noticias/asonip-talk-inventores-heredianos-presentaran-sistema-que-revoluciona-el-cuidado-respiratorio-en-el-peru/" rel="noopener">ASONIP feature</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">iOS · Android · Flutter</span>
+        <h3>URP Móvil — Official University Apps</h3>
+        <p>The university's official mobile apps for 15,000+ students — enrollment, schedules, and academic data, connected to Campus URP. Built and maintained under my direction; I own the store presence end-to-end (DUNS, Apple institutional fee waiver; Huawei AppGallery in progress).</p>
+        <div class="links">
+          <a href="https://play.google.com/store/apps/details?id=pe.edu.urp.urp_app" rel="noopener">Google Play</a>
+          <a href="https://apps.apple.com/pe/app/urp-movil/id6749589812" rel="noopener">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Startup Perú 2023 winner</span>
+        <h3>Motorongo — Green Mobility for the Amazon</h3>
+        <p>Ride-hailing platform for the Peruvian Amazon that funds reforestation with every trip. Co-founded and architected end-to-end: backend, database, and passenger/driver Android apps. Won Startup Perú as Terabike (Tera Technologies).</p>
+        <div class="links">
+          <a href="https://play.google.com/store/apps/details?id=pe.motorongo.motorongo" rel="noopener">Google Play</a>
+          <a href="https://www.facebook.com/motorongoperu/" rel="noopener">Facebook</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div class="skill-row"><span class="k">Backend</span><span class="v">Python (Django, FastAPI) · Java 17/21 (Spring Boot) · Node.js</span></div>
+      <div class="skill-row"><span class="k">Mobile &amp; Frontend</span><span class="v">Flutter/Dart · Kotlin · React · JavaScript</span></div>
+      <div class="skill-row"><span class="k">Data &amp; Messaging</span><span class="v">PostgreSQL · SQL Server · MySQL · MongoDB · Kafka · RabbitMQ</span></div>
+      <div class="skill-row"><span class="k">Cloud &amp; DevOps</span><span class="v">AWS · GCP · Azure DevOps · Keycloak · Grafana/Prometheus · Linux · GitLab (self-hosted)</span></div>
+      <div class="skill-row"><span class="k">Delivery</span><span class="v">Agile/Scrum · hybrid frameworks · Jira · OpenProject · stakeholder reporting</span></div>
+      <div class="skill-row"><span class="k">Leadership</span><span class="v">Hiring · mentoring · budgets · governance &amp; accreditation (SUNEDU)</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education &amp; Publication</h2>
+    <div class="edu">
+      <div class="edu-item"><span class="t"><b>MEng, Systems Engineering &amp; Informatics</b> <span>· Universidad Nacional Mayor de San Marcos</span></span><span class="d">2020 – 2023</span></div>
+      <div class="edu-item"><span class="t"><b>BEng &amp; Professional Title, Mechatronics Engineering</b> <span>· Universidad Ricardo Palma</span></span><span class="d">2013 – 2019</span></div>
+      <div class="edu-item"><span class="t"><b>Publication:</b> <span>Implementation of Tsunami Early Warning Receiver via the EWBS Signal — IEEE Xplore</span></span><span class="d">2019</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="big">Open to remote engineering-management and technical-delivery roles with EU companies.</p>
+    <div class="contact-row">
+      <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Download CV (PDF)
+      </a>
+      <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
+      <a href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="langs">ES native · EN C1 · JA basic · ZH elementary</p>
+  </div>
+</footer>
+
+</body>
+</html>

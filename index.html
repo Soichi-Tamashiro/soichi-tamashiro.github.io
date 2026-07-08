@@ -89,9 +89,41 @@
   .role{
     font-family:"Bricolage Grotesque",sans-serif;
     font-weight:600;font-size:clamp(18px,3vw,24px);
-    color:var(--text);margin-bottom:12px;
+    color:var(--text);margin-bottom:8px;
   }
+  .role-sub{color:var(--accent);font-size:15.5px;font-weight:500;margin-bottom:14px;max-width:56ch}
   .meta{color:var(--muted);font-size:15px;max-width:60ch}
+
+  /* ---------- Hero layout + facts card ---------- */
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:36px}
+  @media (min-width:840px){
+    .hero-grid{grid-template-columns:1.7fr 1fr;align-items:center}
+  }
+  .facts{
+    background:var(--surface);border:1px solid var(--line);border-radius:8px;
+    padding:18px 22px;font-family:"IBM Plex Mono",monospace;font-size:13px;
+    align-self:start;
+  }
+  @media (min-width:840px){.facts{align-self:center}}
+  .frow{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line)}
+  .frow:last-child{border-bottom:none}
+  .frow .fk{color:var(--muted);text-transform:lowercase}
+  .frow .fv{color:var(--text);text-align:right}
+  .frow .fv.st{color:var(--accent)}
+  .frow .fv.st::before{content:"●";font-size:9px;margin-right:7px;vertical-align:1px}
+
+  /* ---------- Stat tiles ---------- */
+  .stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin:4px 0 2px}
+  .stat .n{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+    font-size:21px;color:var(--accent);line-height:1.15;display:block;
+  }
+  .stat .l{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+  .statband{display:flex;flex-wrap:wrap;gap:14px 44px;margin-top:30px;padding-top:24px;border-top:1px dashed var(--line)}
+  .statband .n{font-size:26px}
   .contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:13.5px}
   .contact-row span{color:var(--muted)}
 
@@ -162,21 +194,34 @@
 
 <header>
   <div class="wrap">
-    <p class="eyebrow">Lima, Peru (UTC-5) · Remote — ~4h daily overlap with CET</p>
-    <h1>Soichi Tamashiro</h1>
-    <svg class="pulse" viewBox="0 0 420 36" aria-hidden="true">
-      <path d="M0 22 H90 L104 22 112 8 122 30 130 22 H210 L224 22 232 4 244 32 252 22 H340 L352 22 358 14 364 26 370 22 H420"/>
-    </svg>
-    <p class="role">Technical Project Manager&ensp;|&ensp;Engineering Manager</p>
-    <p class="meta">10+ years across software delivery, legacy modernization, and engineering leadership. I turn business needs into software running in production — coordinating people, technical decisions, and infrastructure.</p>
-    <div class="contact-row">
-      <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-        Download CV (PDF)
-      </a>
-      <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
-      <a href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener">linkedin.com/in/soichi-tamashiro</a>
-      <!-- Add when your GitHub has public repos to show: <a href="https://github.com/Soichi-Tamashiro" rel="noopener">github.com/Soichi-Tamashiro</a> -->
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow">Lima, Peru (UTC-5) · Remote — ~4h daily overlap with CET</p>
+        <h1>Soichi Tamashiro</h1>
+        <svg class="pulse" viewBox="0 0 420 36" aria-hidden="true">
+          <path d="M0 22 H90 L104 22 112 8 122 30 130 22 H210 L224 22 232 4 244 32 252 22 H340 L352 22 358 14 364 26 370 22 H420"/>
+        </svg>
+        <p class="role">Technical Project Manager&ensp;|&ensp;Engineering Manager</p>
+        <p class="role-sub">Legacy modernization &amp; compliance-heavy delivery — from 20-year-old systems to shipping teams.</p>
+        <p class="meta">10+ years across software delivery, legacy modernization, and engineering leadership. I turn business needs into software running in production — coordinating people, technical decisions, and infrastructure.</p>
+        <div class="contact-row">
+          <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Download CV (PDF)
+          </a>
+          <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
+          <a href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener">linkedin.com/in/soichi-tamashiro</a>
+          <!-- Add when your GitHub has public repos to show: <a href="https://github.com/Soichi-Tamashiro" rel="noopener">github.com/Soichi-Tamashiro</a> -->
+        </div>
+      </div>
+      <aside class="facts" aria-label="Quick facts">
+        <div class="frow"><span class="fk">role</span><span class="fv">TPM · Eng Manager</span></div>
+        <div class="frow"><span class="fk">location</span><span class="fv">Lima, Peru (UTC-5)</span></div>
+        <div class="frow"><span class="fk">overlap</span><span class="fv">~4h daily with CET</span></div>
+        <div class="frow"><span class="fk">team</span><span class="fv">10 engineers · 15+ systems</span></div>
+        <div class="frow"><span class="fk">languages</span><span class="fv">ES native · EN C1</span></div>
+        <div class="frow"><span class="fk">status</span><span class="fv st">Open to EU contracts</span></div>
+      </aside>
     </div>
   </div>
 </header>
@@ -186,6 +231,13 @@
     <h2>Profile</h2>
     <p class="lead">I lead a <b>10-person cross-functional engineering team</b> and 3–6 concurrent projects at Universidad Ricardo Palma (15,000+ students), directing <b>Campus URP</b> — the university's core academic platform — from requirements and architecture through CI/CD, cloud and on-premise deployment, to production support, compliance, and national accreditation.</p>
     <p class="lead">Hands-on backend engineer (Python, Java, Node) turned delivery leader: I hire, mentor, own budgets, and can still challenge an architecture decision line by line. <b>IEEE-published researcher</b> with three projects covered in national media, and co-founder of a national startup-competition winner. Available for EU-hours remote work as an independent contractor.</p>
+    <div class="statband">
+      <div class="stat"><span class="n">10</span><span class="l">engineers led</span></div>
+      <div class="stat"><span class="n">15+</span><span class="l">systems in portfolio</span></div>
+      <div class="stat"><span class="n">3–6</span><span class="l">concurrent projects</span></div>
+      <div class="stat"><span class="n">80%</span><span class="l">delivery-time cut</span></div>
+      <div class="stat"><span class="n">4</span><span class="l">budget lines owned</span></div>
+    </div>
   </div>
 </section>
 
@@ -204,7 +256,7 @@
         <li><b>Led the platform's complete rework, owning requirements and architecture</b> — replaced a 20-year-old legacy system; cut administrative workload 50% and improved task-completion times ~300%.</li>
         <li><b>Delivered a university-wide evaluations system</b> (in production): automated grade validation, three-level approval workflow, full audit trail — Java 17/Spring Boot, React, SQL Server.</li>
         <li><b>Delivered the undergraduate medicine hospital-program system</b> (in production); leading the internado and medical-residency platforms, both subject to national health-education legislation.</li>
-        <li><b>Supervised delivery of an on-premise AI assistant</b> — RAG over locally served LLMs, role-based authorization, tamper-evident auditing; no data leaves university infrastructure.</li>
+        <li><b>Supervised delivery of an on-premise AI assistant</b> — RAG over locally served LLMs, role-based authorization, tamper-evident auditing; no data leaves university infrastructure. Mentored its developer from module work to independently shipping the entire platform.</li>
         <li><b>Leading the migration to a Keycloak-based IAM platform</b>; own the university's Flutter mobile apps and app-store presence end-to-end (DUNS, Apple institutional fee waiver).</li>
         <li><b>Hire, lead, and mentor a mixed-seniority team</b>; manage hiring, app-store, integration, and AI/LLM budgets, defending cases before the university's budget office.</li>
         <li><b>Cut delivery times up to 80%</b> with a per-project hybrid framework (Agile sprints, design thinking, waterfall gates); own SUNEDU accreditation and security-compliance documentation.</li>
@@ -278,7 +330,12 @@
       <div class="card">
         <span class="tag">National press · IEEE</span>
         <h3>HIRO — Tsunami Early-Warning Receiver</h3>
-        <p>First tsunami alert reception system made in Peru, able to warn up to 20 minutes before coastal impact. Joint ELOGIC–PUCP project funded by Innóvate Perú.</p>
+        <p>First tsunami alert reception system made in Peru. Joint ELOGIC–PUCP project funded by Innóvate Perú.</p>
+        <div class="stats">
+          <div class="stat"><span class="n">1st</span><span class="l">made in Peru</span></div>
+          <div class="stat"><span class="n">20 min</span><span class="l">early warning</span></div>
+          <div class="stat"><span class="n">IEEE</span><span class="l">published</span></div>
+        </div>
         <div class="links">
           <a href="https://elcomercio.pe/tecnologia/actualidad/hiro-primer-sistema-recepcion-aplicacion-alerta-tsunamis-hecho-peru-noticia-637788-noticia/" rel="noopener">El Comercio</a>
           <a href="https://cris.pucp.edu.pe/es/publications/implementation-of-tsunami-early-warning-receiver-via-the-ewbs-sig/" rel="noopener">IEEE publication</a>
@@ -288,7 +345,12 @@
       <div class="card">
         <span class="tag">National press</span>
         <h3>Campus URP / Yachayhuasi</h3>
-        <p>Core academic platform of Universidad Ricardo Palma — 15,000+ students, 8 faculties. Replaced a system in service for over two decades; launch covered by El Comercio (2023).</p>
+        <p>Core academic platform of Universidad Ricardo Palma. Replaced a system in service for over two decades; launch covered by El Comercio (2023).</p>
+        <div class="stats">
+          <div class="stat"><span class="n">15K+</span><span class="l">students</span></div>
+          <div class="stat"><span class="n">8</span><span class="l">faculties</span></div>
+          <div class="stat"><span class="n">50%</span><span class="l">admin workload cut</span></div>
+        </div>
         <div class="links">
           <a href="https://suplementos.elcomercio.pe/propuesta-urp-154/2023/08/25/yachayhuasi-la-nueva-plataforma-educativa/" rel="noopener">El Comercio (2023)</a>
           <span style="color:var(--muted)">Directed since 2023</span>
@@ -319,6 +381,11 @@
         <span class="tag">Startup Perú 2023 winner</span>
         <h3>Motorongo — Green Mobility for the Amazon</h3>
         <p>Ride-hailing platform for the Peruvian Amazon that funds reforestation with every trip. Co-founded and architected end-to-end: backend, database, and passenger/driver Android apps. Won Startup Perú as Terabike (Tera Technologies).</p>
+        <div class="stats">
+          <div class="stat"><span class="n">2023</span><span class="l">Startup Perú winner</span></div>
+          <div class="stat"><span class="n">0→1</span><span class="l">product built</span></div>
+          <div class="stat"><span class="n">3</span><span class="l">engineers led</span></div>
+        </div>
         <div class="links">
           <a href="https://play.google.com/store/apps/details?id=pe.motorongo.motorongo" rel="noopener">Google Play</a>
           <a href="https://www.facebook.com/motorongoperu/" rel="noopener">Facebook</a>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URP Móvil — Caso de estudio · Soichi Tamashiro</title>
+<meta name="description" content="Construyendo y siendo responsable de las apps móviles oficiales de la Universidad Ricardo Palma — apps en Flutter para una comunidad de 15,000+, con presencia en tiendas de extremo a extremo (DUNS, exoneración institucional de Apple).">
+<link rel="canonical" href="https://soichi-tamashiro.github.io/es/projects/urp-movil.html">
+<link rel="alternate" hreflang="en" href="https://soichi-tamashiro.github.io/projects/urp-movil.html">
+<link rel="alternate" hreflang="es" href="https://soichi-tamashiro.github.io/es/projects/urp-movil.html">
+<link rel="alternate" hreflang="x-default" href="https://soichi-tamashiro.github.io/projects/urp-movil.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="URP Móvil — Caso de estudio · Soichi Tamashiro">
+<meta property="og:description" content="Apps móviles oficiales de la universidad para una comunidad de 15,000+, con responsabilidad de extremo a extremo sobre las tiendas.">
+<meta property="og:url" content="https://soichi-tamashiro.github.io/es/projects/urp-movil.html">
+<meta property="og:image" content="https://soichi-tamashiro.github.io/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230E1116'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='33' font-weight='700' fill='%23E0A93E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/case.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('font')==='legible')document.documentElement.setAttribute('data-font','legible');}catch(e){}})();</script>
+</head>
+<body>
+
+<nav class="topbar" aria-label="Caso de estudio">
+  <div class="wrap topbar-inner">
+    <a class="backlink" href="/es/#projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      Soichi Tamashiro
+    </a>
+    <div class="topbar-right">
+      <div class="langtog" role="group" aria-label="Idioma"><a href="/projects/urp-movil.html">EN</a><a class="active" aria-current="page" href="/es/projects/urp-movil.html">ES</a></div>
+      <button class="pref-btn" type="button" data-toggle="font" aria-pressed="false" aria-label="Usar fuente para dislexia" title="Fuente para dislexia"><span class="pref-label">Aa</span></button>
+      <button class="pref-btn" type="button" data-toggle="theme" aria-pressed="false" aria-label="Cambiar a tema claro" title="Tema claro / oscuro"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+      <a class="btn" href="/cv/Soichi_Tamashiro_CV.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      CV
+    </a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <p class="eyebrow">Caso de estudio · iOS · Android · Flutter</p>
+    <h1>URP Móvil — Official University Apps</h1>
+    <p class="case-sub">Construyendo y siendo responsable de las apps móviles oficiales de la Universidad Ricardo Palma — para estudiantes, docentes y personal — incluida toda la presencia institucional en tiendas que la mayoría de equipos nunca tiene que tocar.</p>
+    <div class="case-meta">
+      <div class="cm"><span class="k">Mi rol</span><span class="v">TPM · responsable de móvil y tiendas</span></div>
+      <div class="cm"><span class="k">Cronología</span><span class="v">2023 – actualidad</span></div>
+      <div class="cm"><span class="k">Organización</span><span class="v">Universidad Ricardo Palma</span></div>
+      <div class="cm"><span class="k">Equipo</span><span class="v">Diseñador UI/UX + ingeniero full-stack</span></div>
+    </div>
+    <div class="statband" style="margin-top:28px">
+      <div class="stat"><span class="n">15K+</span><span class="l">comunidad atendida</span></div>
+      <div class="stat"><span class="n">2</span><span class="l">tiendas activas (+1 en curso)</span></div>
+      <div class="stat"><span class="n">DUNS</span><span class="l">obtenido</span></div>
+      <div class="stat"><span class="n">Apple</span><span class="l">exoneración institucional</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Contexto</h2>
+    <p>URP Móvil es la <b>app móvil oficial</b> de la universidad — usada por estudiantes, docentes y personal administrativo para matrícula, horarios y datos académicos, conectada a la plataforma Campus URP.</p>
+    <div class="case-gallery">
+      <figure class="case-figure">
+        <div class="ph portrait">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 5h4"/></svg>
+          <span class="lbl">Captura de la app 1</span>
+          <span class="hint">de Google Play</span>
+        </div>
+      </figure>
+      <figure class="case-figure">
+        <div class="ph portrait">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 5h4"/></svg>
+          <span class="lbl">Captura de la app 2</span>
+          <span class="hint">de App Store</span>
+        </div>
+      </figure>
+    </div>
+    <p style="color:var(--muted);font-size:13px;font-style:italic;margin-top:2px">Sugerencia: 2–3 capturas reales tomadas directamente de las fichas de las tiendas (totalmente públicas).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>El reto</h2>
+    <p>Publicar la app es la mitad fácil. La mitad difícil es la <b>presencia institucional en tiendas</b> — una universidad pública que publica bajo su propia identidad legal debe superar trabas administrativas que la mayoría de equipos de producto nunca ve:</p>
+    <ul>
+      <li>Obtener el <b>número DUNS</b> de la universidad (requerido para la identidad de la cuenta de desarrollador).</li>
+      <li>Conseguir la <b>exoneración institucional de la cuota de Apple</b>.</li>
+      <li>Lograr la acreditación en <b>Huawei AppGallery</b> (en curso).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Lo que hice</h2>
+    <ul>
+      <li><b>Construí y mantengo las apps</b> (Flutter) con un diseñador UI/UX y un ingeniero full-stack, conectadas a Campus URP.</li>
+      <li><b>Soy responsable de la presencia en tiendas de extremo a extremo</b> — obtuve el número DUNS de la universidad y la exoneración institucional de Apple; acreditación de Huawei AppGallery en curso.</li>
+      <li><b>Dirijo el roadmap</b> para que la experiencia móvil avance al ritmo de la plataforma académica que la respalda.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Stack</h2>
+    <div class="tstack">
+      <span>Flutter / Dart</span><span>iOS</span><span>Android</span><span>Campus URP backend integration</span><span>Google Play</span><span>App Store</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Impacto</h2>
+    <p>Las apps oficiales están <b>activas en Google Play y la App Store</b> para una comunidad universitaria de 15,000+, con la identidad institucional en tiendas totalmente establecida — la base que hace rutinarios los próximos lanzamientos.</p>
+    <div class="case-links">
+      <a href="https://play.google.com/store/apps/details?id=pe.edu.urp.urp_app" rel="noopener noreferrer" target="_blank">Google Play ↗</a>
+      <a href="https://apps.apple.com/pe/app/urp-movil/id6749589812" rel="noopener noreferrer" target="_blank">App Store ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="big">¿Quieres el detalle técnico?</p>
+    <div class="case-links">
+      <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
+    </div>
+    <div class="more-cases">
+      <span style="color:var(--muted)">Más casos de estudio:</span>
+      <a href="/es/projects/campus-urp.html">Campus URP</a>
+      <a href="/es/projects/hiro.html">HIRO</a>
+      <a href="/es/projects/inspira.html">INSPIRA</a>
+      <a href="/es/projects/motorongo.html">Motorongo</a>
+    </div>
+    <p class="langs" style="margin-top:26px"><a href="/es/#projects">← Volver a todos los proyectos</a></p>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

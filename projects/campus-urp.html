@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus URP — Case Study · Soichi Tamashiro</title>
+<meta name="description" content="How I directed the rework of Universidad Ricardo Palma's core academic platform — replacing a 20-year-old legacy system, cutting admin workload 50%, serving a 15,000+ community.">
+<link rel="canonical" href="https://soichi-tamashiro.github.io/projects/campus-urp.html">
+<link rel="alternate" hreflang="en" href="https://soichi-tamashiro.github.io/projects/campus-urp.html">
+<link rel="alternate" hreflang="es" href="https://soichi-tamashiro.github.io/es/projects/campus-urp.html">
+<link rel="alternate" hreflang="x-default" href="https://soichi-tamashiro.github.io/projects/campus-urp.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Campus URP — Case Study · Soichi Tamashiro">
+<meta property="og:description" content="Directing the rework of a university's core academic platform: legacy modernization, delivery, and compliance at scale.">
+<meta property="og:url" content="https://soichi-tamashiro.github.io/projects/campus-urp.html">
+<meta property="og:image" content="https://soichi-tamashiro.github.io/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230E1116'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='33' font-weight='700' fill='%23E0A93E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/case.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('font')==='legible')document.documentElement.setAttribute('data-font','legible');}catch(e){}})();</script>
+</head>
+<body>
+
+<nav class="topbar" aria-label="Case study">
+  <div class="wrap topbar-inner">
+    <a class="backlink" href="/#projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      Soichi Tamashiro
+    </a>
+    <div class="topbar-right">
+      <div class="langtog" role="group" aria-label="Language"><a class="active" aria-current="page" href="/projects/campus-urp.html">EN</a><a href="/es/projects/campus-urp.html">ES</a></div>
+      <button class="pref-btn" type="button" data-toggle="font" aria-pressed="false" aria-label="Use a dyslexia-friendly font" title="Dyslexia-friendly font"><span class="pref-label">Aa</span></button>
+      <button class="pref-btn" type="button" data-toggle="theme" aria-pressed="false" aria-label="Switch to light theme" title="Light / dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+      <a class="btn" href="/cv/Soichi_Tamashiro_CV.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      CV
+    </a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <p class="eyebrow">Case study · Flagship · National press</p>
+    <h1>Campus URP</h1>
+    <p class="case-sub">Directing the rework of Universidad Ricardo Palma's core academic platform — replacing a 20-year-old legacy system and turning it into a governed, continuously-shipping product for a 15,000+ community.</p>
+    <div class="case-meta">
+      <div class="cm"><span class="k">My role</span><span class="v">Technical Project Manager (EM scope)</span></div>
+      <div class="cm"><span class="k">Timeline</span><span class="v">Aug 2023 – present</span></div>
+      <div class="cm"><span class="k">Organization</span><span class="v">Universidad Ricardo Palma</span></div>
+      <div class="cm"><span class="k">Team</span><span class="v">10 engineers, cross-functional</span></div>
+    </div>
+    <div class="statband" style="margin-top:28px">
+      <div class="stat"><span class="n">15K+</span><span class="l">community served</span></div>
+      <div class="stat"><span class="n">50%</span><span class="l">admin workload cut</span></div>
+      <div class="stat"><span class="n">80%</span><span class="l">delivery time cut</span></div>
+      <div class="stat"><span class="n">20-yr</span><span class="l">legacy replaced</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Context</h2>
+    <p><b>Campus URP</b> (formerly Yachayhuasi) is the core academic platform of Universidad Ricardo Palma — a Peruvian university of 15,000+ students, faculty, and administrative staff across 8 faculties. It runs curricula, courses, enrollment, lective and non-lective workload, schedules, classrooms, grading, and reporting across undergraduate, postgraduate, master's, specialties, and medical residency programs.</p>
+    <p>I joined as a <b>backend analyst on the original build</b>, and after launch was promoted to <b>Technical Project Manager</b> to lead the platform's consolidation and expansion. Its launch was covered by <i>El Comercio</i>, Peru's leading newspaper.</p>
+    <figure class="case-figure">
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 2-2 5 5"/></svg>
+        <span class="lbl">Architecture diagram — Campus URP</span>
+        <span class="hint">image placeholder</span>
+      </div>
+      <figcaption>Suggested: a high-level architecture diagram (platform · Keycloak IAM · evaluations · on-premise AI). Internal UI shouldn't be shown — a diagram or a redacted screenshot works.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>The challenge</h2>
+    <p>The platform replaced a system that had been in service for <b>more than two decades</b>. The legacy stack was fragile and, in parts, only deployable on unsupported Windows versions. Two symptoms defined the pain:</p>
+    <ul>
+      <li><b>Every academic cycle started in crisis.</b> Launching a cycle required <i>emergency committees</i> — manual, cross-department firefighting just to get the term running.</li>
+      <li><b>Data was corrected by hand.</b> Grades and academic records were routinely fixed with manual database interventions, with no audit trail and real compliance risk.</li>
+    </ul>
+    <p>The mandate was not just to rebuild, but to make the platform <b>governable, auditable, and continuously deliverable</b> — under Peruvian data-protection law and national university accreditation (SUNEDU).</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>What I did</h2>
+
+    <h3>Owned requirements &amp; architecture for the rework</h3>
+    <p>I led the platform's complete rework end-to-end — from requirements and architecture through CI/CD, cloud (AWS/GCP) and on-premise deployment, to production support and accreditation.</p>
+
+    <h3>Shipped the systems that removed the manual work</h3>
+    <ul>
+      <li><b>University-wide evaluations system</b> — automated grade-validation rules, a three-level digital approval workflow, full audit trail and notifications. This eliminated the manual database corrections entirely.</li>
+      <li><b>Undergraduate-medicine hospital-program system</b> — hybrid university/hospital schedules, rotations, supervising-physician allocation, and program-specific grading, integrated with legacy enrollment.</li>
+      <li><b>On-premise AI assistant</b> — retrieval-augmented generation over locally-served LLMs, role-based authorization, and tamper-evident auditing, with <b>no data leaving university infrastructure</b>.</li>
+    </ul>
+
+    <h3>Built the team and the delivery engine</h3>
+    <ul>
+      <li>Hire, lead, and mentor a <b>10-person cross-functional team</b> (backend, frontend, DBA/data, UI/UX, DevOps).</li>
+      <li>Introduced a <b>per-project hybrid framework</b> (Agile sprints, design thinking, waterfall gates) and coordinated CI/CD, releases, and the migration to a new datacenter.</li>
+      <li>Own hiring, app-store, integration, and AI/LLM <b>budgets</b>, defending cases before the university's budget office.</li>
+    </ul>
+
+    <h3>Made it governable</h3>
+    <p>I lead the migration to a <b>Keycloak-based IAM platform</b> (owning role, permission, and resource design) and own technology governance and compliance — SUNEDU accreditation documentation, information-security and privacy-policy accreditations, and GDPR-aligned data protection with the university's Cybersecurity Committee.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Architecture &amp; stack</h2>
+    <div class="tstack">
+      <span>Java 17/21 · Spring Boot</span><span>React</span><span>SQL Server</span>
+      <span>PostgreSQL + pgvector</span><span>Keycloak (IAM)</span><span>OAuth 2.0 / JWT · AES-256</span>
+      <span>AWS · GCP</span><span>on-premise LLMs (RAG)</span><span>CI/CD</span><span>self-hosted GitLab</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Impact</h2>
+    <div class="statband" style="margin-top:0;padding-top:0;border-top:none">
+      <div class="stat"><span class="n">50%</span><span class="l">less admin workload</span></div>
+      <div class="stat"><span class="n">~300%</span><span class="l">faster task completion</span></div>
+      <div class="stat"><span class="n">80%</span><span class="l">shorter delivery times</span></div>
+      <div class="stat"><span class="n">0</span><span class="l">emergency committees</span></div>
+    </div>
+    <p style="margin-top:22px">The rework <b>eliminated the emergency committees</b> that used to precede each academic cycle and removed manual database corrections from grade management. The platform now serves the full university community in production, under national accreditation, with a team and delivery process built to keep expanding it.</p>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="big">Want the deeper technical version, or references?</p>
+    <div class="case-links">
+      <a href="https://suplementos.elcomercio.pe/propuesta-urp-154/2023/08/25/yachayhuasi-la-nueva-plataforma-educativa/" rel="noopener noreferrer" target="_blank">El Comercio (2023) ↗</a>
+      <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
+    </div>
+    <div class="more-cases">
+      <span style="color:var(--muted)">More case studies:</span>
+      <a href="/projects/hiro.html">HIRO</a>
+      <a href="/projects/inspira.html">INSPIRA</a>
+      <a href="/projects/urp-movil.html">URP Móvil</a>
+      <a href="/projects/motorongo.html">Motorongo</a>
+    </div>
+    <p class="langs" style="margin-top:26px"><a href="/#projects">← Back to all projects</a></p>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

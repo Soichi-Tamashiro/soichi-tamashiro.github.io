@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HIRO — Caso de estudio · Soichi Tamashiro</title>
+<meta name="description" content="Co-desarrollo de HIRO, el primer receptor de alerta temprana de tsunamis hecho en el Perú — señal de difusión EWBS, plataformas embebidas, publicado en IEEE.">
+<link rel="canonical" href="https://soichi-tamashiro.github.io/es/projects/hiro.html">
+<link rel="alternate" hreflang="en" href="https://soichi-tamashiro.github.io/projects/hiro.html">
+<link rel="alternate" hreflang="es" href="https://soichi-tamashiro.github.io/es/projects/hiro.html">
+<link rel="alternate" hreflang="x-default" href="https://soichi-tamashiro.github.io/projects/hiro.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HIRO — Caso de estudio · Soichi Tamashiro">
+<meta property="og:description" content="El primer receptor de alerta temprana de tsunamis hecho en el Perú. Señal EWBS, sistemas embebidos, publicado en IEEE.">
+<meta property="og:url" content="https://soichi-tamashiro.github.io/es/projects/hiro.html">
+<meta property="og:image" content="https://soichi-tamashiro.github.io/assets/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230E1116'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='33' font-weight='700' fill='%23E0A93E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/case.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('font')==='legible')document.documentElement.setAttribute('data-font','legible');}catch(e){}})();</script>
+</head>
+<body>
+
+<nav class="topbar" aria-label="Caso de estudio">
+  <div class="wrap topbar-inner">
+    <a class="backlink" href="/es/#projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      Soichi Tamashiro
+    </a>
+    <div class="topbar-right">
+      <div class="langtog" role="group" aria-label="Idioma"><a href="/projects/hiro.html">EN</a><a class="active" aria-current="page" href="/es/projects/hiro.html">ES</a></div>
+      <button class="pref-btn" type="button" data-toggle="font" aria-pressed="false" aria-label="Usar fuente para dislexia" title="Fuente para dislexia"><span class="pref-label">Aa</span></button>
+      <button class="pref-btn" type="button" data-toggle="theme" aria-pressed="false" aria-label="Cambiar a tema claro" title="Tema claro / oscuro"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+      <a class="btn" href="/cv/Soichi_Tamashiro_CV.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      CV
+    </a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <p class="eyebrow">Caso de estudio · I+D · Publicado en IEEE · Prensa nacional</p>
+    <h1>HIRO — Tsunami Early-Warning Receiver</h1>
+    <p class="case-sub">Co-desarrollo del primer receptor de alerta temprana de tsunamis hecho en el Perú — decodificando una señal nacional de difusión de alertas en hardware embebido para avisar a las comunidades costeras antes del impacto.</p>
+    <div class="case-meta">
+      <div class="cm"><span class="k">Mi rol</span><span class="v">Investigador de I+D (co-desarrollador)</span></div>
+      <div class="cm"><span class="k">Cronología</span><span class="v">2016 – 2019</span></div>
+      <div class="cm"><span class="k">Organización</span><span class="v">ELOGIC · proyecto conjunto con la PUCP</span></div>
+      <div class="cm"><span class="k">Financiamiento</span><span class="v">Innóvate Perú (Ministerio de la Producción)</span></div>
+    </div>
+    <div class="statband" style="margin-top:28px">
+      <div class="stat"><span class="n">1st</span><span class="l">hecho en el Perú</span></div>
+      <div class="stat"><span class="n">20 min</span><span class="l">de alerta previa</span></div>
+      <div class="stat"><span class="n">IEEE</span><span class="l">publicado en Xplore</span></div>
+      <div class="stat"><span class="n">PUCP</span><span class="l">socio de I+D</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Contexto</h2>
+    <p>El Perú se ubica en una costa altamente sísmica donde un gran terremoto mar adentro puede hacer llegar un tsunami a la orilla en minutos. El <b>EWBS</b> (Sistema de Difusión de Alertas de Emergencia) de Japón incrusta los datos de alerta dentro de la señal habitual de TV digital — pero no existía un dispositivo hecho localmente capaz de recibirla y actuar sobre ella. HIRO fue un proyecto de I+D conjunto <b>ELOGIC–PUCP</b>, financiado por Innóvate Perú, para construir uno.</p>
+    <figure class="case-figure">
+      <div class="ph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 2-2 5 5"/></svg>
+        <span class="lbl">Foto del dispositivo — receptor HIRO</span>
+        <span class="hint">imagen pendiente</span>
+      </div>
+      <figcaption>Sugerencia: una foto del dispositivo HIRO, o la figura del paper de IEEE Xplore / el recorte de El Comercio.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>El reto</h2>
+    <ul>
+      <li><b>Decodificar una alerta escondida en una señal de difusión</b> y convertirla en un aviso local fiable e inmediato.</li>
+      <li><b>Funcionar en hardware barato y desplegable</b> para que el receptor pudiera llegar de forma realista a las comunidades costeras.</li>
+      <li><b>Unir dos mundos</b> — la ingeniería de difusión/RF y el software — que rara vez comparten una base de código.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Lo que hice</h2>
+    <ul>
+      <li><b>Co-desarrollé HIRO de extremo a extremo</b> — el primer receptor de alerta temprana de tsunamis construido en el Perú, capaz de avisar hasta <b>20 minutos antes del impacto en la costa</b>.</li>
+      <li><b>Prototipé en plataformas embebidas</b> (Raspberry Pi, ARM, Arduino), uniendo la ingeniería de difusión y el software.</li>
+      <li><b>Publiqué el trabajo</b> en IEEE Xplore y lo presenté como un dispositivo real y demostrable — no solo un paper.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Stack</h2>
+    <div class="tstack">
+      <span>EWBS broadcast decoding</span><span>Raspberry Pi</span><span>ARM</span><span>Arduino</span>
+      <span>embedded C/firmware</span><span>RF / broadcast engineering</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap case-body">
+    <h2>Impacto y reconocimiento</h2>
+    <p>HIRO fue reconocido como el primer dispositivo de recepción de alertas de tsunami hecho en el Perú, publicado en <b>IEEE Xplore</b> y cubierto por <i>El Comercio</i>. Demostró una vía viable y de bajo costo hacia avisos costeros más tempranos.</p>
+    <div class="case-links">
+      <a href="https://elcomercio.pe/tecnologia/actualidad/hiro-primer-sistema-recepcion-aplicacion-alerta-tsunamis-hecho-peru-noticia-637788-noticia/" rel="noopener noreferrer" target="_blank">El Comercio ↗</a>
+      <a href="https://cris.pucp.edu.pe/es/publications/implementation-of-tsunami-early-warning-receiver-via-the-ewbs-sig/" rel="noopener noreferrer" target="_blank">IEEE publication ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="big">¿Quieres el detalle técnico?</p>
+    <div class="case-links">
+      <a href="mailto:soichi.tamashiro@gmail.com">soichi.tamashiro@gmail.com</a>
+    </div>
+    <div class="more-cases">
+      <span style="color:var(--muted)">Más casos de estudio:</span>
+      <a href="/es/projects/campus-urp.html">Campus URP</a>
+      <a href="/es/projects/inspira.html">INSPIRA</a>
+      <a href="/es/projects/urp-movil.html">URP Móvil</a>
+      <a href="/es/projects/motorongo.html">Motorongo</a>
+    </div>
+    <p class="langs" style="margin-top:26px"><a href="/es/#projects">← Volver a todos los proyectos</a></p>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

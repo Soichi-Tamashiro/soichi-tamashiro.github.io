@@ -6,6 +6,9 @@
 <title>Soichi Tamashiro — Technical Project Manager | Engineering Manager</title>
 <meta name="description" content="Technical Project Manager / Engineering Manager. 10+ years in software delivery, legacy modernization, and engineering leadership. IEEE-published; Startup Perú 2023 winner. Remote — EU hours.">
 <link rel="canonical" href="https://soichi-tamashiro.github.io/">
+<link rel="alternate" hreflang="en" href="https://soichi-tamashiro.github.io/">
+<link rel="alternate" hreflang="es" href="https://soichi-tamashiro.github.io/es/">
+<link rel="alternate" hreflang="x-default" href="https://soichi-tamashiro.github.io/">
 
 <!-- Social / link-preview cards -->
 <meta property="og:type" content="website">
@@ -21,257 +24,8 @@
 <!-- Favicon: ST monogram in the site's gold accent -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230E1116'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='33' font-weight='700' fill='%23E0A93E' text-anchor='middle'%3EST%3C/text%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0E1116;
-    --surface:#161B22;
-    --surface-2:#1C232C;
-    --text:#E6E4DD;
-    --muted:#8B93A1;
-    --accent:#E0A93E;
-    --accent-dim:#9A742B;
-    --line:#262D37;
-    --maxw:880px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:"IBM Plex Sans",system-ui,sans-serif;
-    font-size:16px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
-  a:hover,a:focus-visible{border-bottom-color:var(--accent)}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-
-  /* ---------- Download CV button ---------- */
-  .btn{
-    background:var(--accent);color:#0E1116;font-weight:600;
-    font-family:"IBM Plex Sans",system-ui,sans-serif;
-    padding:9px 18px;border-radius:6px;border-bottom:none;
-    display:inline-flex;align-items:center;gap:8px;font-size:14px;
-    transition:background .15s,transform .15s;
-  }
-  .btn:hover,.btn:focus-visible{background:#EDBA55;border-bottom:none;transform:translateY(-1px)}
-  .btn svg{width:15px;height:15px}
-
-  /* ---------- Top navigation ---------- */
-  .nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(14,17,22,.82);
-    -webkit-backdrop-filter:saturate(160%) blur(10px);backdrop-filter:saturate(160%) blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px;gap:18px}
-  .brand{
-    font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:15px;letter-spacing:.12em;
-    color:var(--text);border-bottom:none;flex:none;
-  }
-  .brand:hover,.brand:focus-visible{border-bottom:none;color:var(--text)}
-  .brand .dot{color:var(--accent)}
-  .nav-links{display:flex;gap:22px;flex:1;justify-content:center;
-    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em}
-  .nav-links a{color:var(--muted);border-bottom:none;text-transform:uppercase;padding:6px 0;position:relative;transition:color .15s}
-  .nav-links a:hover,.nav-links a:focus-visible{color:var(--text);border-bottom:none}
-  .nav-links a.active{color:var(--accent)}
-  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);border-radius:2px}
-  .nav .btn{padding:7px 14px;font-size:12.5px;flex:none}
-  .nav .btn svg{width:13px;height:13px}
-  .nav-right{display:flex;align-items:center;gap:12px}
-  .nav-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;
-    width:40px;height:40px;background:none;border:1px solid var(--line);border-radius:8px;cursor:pointer;padding:0}
-  .nav-toggle .bar{display:block;width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
-  .nav.open .nav-toggle .bar:nth-child(1){transform:translateY(6px) rotate(45deg)}
-  .nav.open .nav-toggle .bar:nth-child(2){opacity:0}
-  .nav.open .nav-toggle .bar:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-  @media (max-width:660px){
-    .nav-toggle{display:flex}
-    .nav-links{
-      position:absolute;top:56px;left:0;right:0;z-index:49;
-      flex-direction:column;justify-content:flex-start;gap:0;flex:none;
-      background:rgba(14,17,22,.97);
-      -webkit-backdrop-filter:saturate(160%) blur(12px);backdrop-filter:saturate(160%) blur(12px);
-      border-bottom:1px solid var(--line);padding:6px 0 12px;
-      opacity:0;transform:translateY(-10px);pointer-events:none;
-      transition:opacity .2s ease,transform .2s ease;
-    }
-    .nav.open .nav-links{opacity:1;transform:none;pointer-events:auto}
-    .nav-links a{width:100%;padding:13px 24px;font-size:13px}
-    .nav-links a.active{color:var(--accent)}
-    .nav-links a.active::after{display:none}
-  }
-
-  /* ---------- Icon links ---------- */
-  .social{display:flex;align-items:center;gap:10px}
-  .iconlink{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:40px;height:40px;border:1px solid var(--line);border-radius:9px;
-    color:var(--muted);background:var(--surface);
-    transition:color .15s,border-color .15s,transform .15s,background .15s;
-  }
-  .iconlink:hover,.iconlink:focus-visible{color:var(--accent);border-color:var(--accent-dim);background:var(--surface-2);transform:translateY(-1px)}
-  .iconlink svg{width:18px;height:18px}
-
-  /* ---------- Scroll reveal ---------- */
-  html.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-  html.js .reveal.in{opacity:1;transform:none}
-
-  /* ---------- Hero ---------- */
-  header{padding:52px 0 56px;border-bottom:1px solid var(--line)}
-  .eyebrow{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:18px;
-  }
-  h1{
-    font-family:"Bricolage Grotesque",sans-serif;
-    font-weight:700;font-size:clamp(38px,7vw,64px);
-    line-height:1.04;letter-spacing:-.015em;
-  }
-  .pulse{display:block;width:min(420px,80%);height:36px;margin:18px 0 22px}
-  .pulse path{
-    fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;
-    stroke-dasharray:640;stroke-dashoffset:640;
-    animation:draw 2.2s ease-out .3s forwards;
-  }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @media (prefers-reduced-motion:reduce){
-    .pulse path{animation:none;stroke-dashoffset:0}
-    html{scroll-behavior:auto}
-    .btn:hover,.card:hover,.iconlink:hover{transform:none}
-    html.js .reveal,html.js .reveal-card{opacity:1;transform:none;transition:none}
-  }
-  .role{
-    font-family:"Bricolage Grotesque",sans-serif;
-    font-weight:600;font-size:clamp(18px,3vw,24px);
-    color:var(--text);margin-bottom:8px;
-  }
-  .role-sub{color:var(--accent);font-size:15.5px;font-weight:500;margin-bottom:14px;max-width:56ch}
-  .meta{color:var(--muted);font-size:15px;max-width:60ch}
-
-  /* ---------- Hero layout + facts card ---------- */
-  .hero-grid{display:grid;grid-template-columns:1fr;gap:36px}
-  @media (min-width:840px){
-    .hero-grid{grid-template-columns:1.7fr 1fr;align-items:center}
-  }
-  .facts{
-    background:var(--surface);border:1px solid var(--line);border-radius:8px;
-    padding:18px 22px;font-family:"IBM Plex Mono",monospace;font-size:13px;
-    align-self:start;
-  }
-  @media (min-width:840px){.facts{align-self:center}}
-  .frow{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line)}
-  .frow:last-child{border-bottom:none}
-  .frow .fk{color:var(--muted);text-transform:lowercase}
-  .frow .fv{color:var(--text);text-align:right}
-  .frow .fv.st{color:var(--accent)}
-  .frow .fv.st::before{content:"●";font-size:9px;margin-right:7px;vertical-align:1px}
-
-  /* ---------- Stat tiles ---------- */
-  .stats{display:flex;flex-wrap:wrap;gap:10px 28px;margin:4px 0 2px}
-  .stat .n{
-    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
-    font-size:21px;color:var(--accent);line-height:1.15;display:block;
-  }
-  .stat .l{
-    font-family:"IBM Plex Mono",monospace;font-size:10.5px;
-    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
-  }
-  .statband{display:flex;flex-wrap:wrap;gap:14px 44px;margin-top:30px;padding-top:24px;border-top:1px dashed var(--line)}
-  .statband .n{font-size:26px}
-  .contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:13.5px}
-  .contact-row span{color:var(--muted)}
-
-  /* ---------- Sections ---------- */
-  section{padding:56px 0;border-bottom:1px solid var(--line);scroll-margin-top:70px}
-  h2{
-    font-family:"IBM Plex Mono",monospace;
-    font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--accent);margin-bottom:28px;
-  }
-  h2::before{content:"// ";color:var(--accent-dim)}
-  .lead{font-size:17.5px;max-width:68ch}
-  .lead b{color:var(--text);font-weight:600}
-  .lead + .lead{margin-top:14px}
-
-  /* ---------- Experience ---------- */
-  .job{margin-bottom:36px}
-  .job:last-child{margin-bottom:0}
-  .job-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:4px}
-  .job-title{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:19px}
-  .job-org{color:var(--muted);font-size:15.5px}
-  .job-dates{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);margin-bottom:12px}
-  .job ul{list-style:none;max-width:72ch}
-  .job li{padding-left:20px;position:relative;margin-bottom:9px;color:#C7CBD1;font-size:15.5px}
-  .job li::before{content:"–";position:absolute;left:0;color:var(--accent-dim)}
-  .job li b{color:var(--text);font-weight:600}
-  .early{color:var(--muted);font-style:italic;font-size:14.5px;margin-top:26px}
-
-  /* ---------- Project cards ---------- */
-  #projects .wrap{max-width:1000px}
-  .cards{display:grid;grid-template-columns:1fr;gap:18px}
-  @media (min-width:600px){.cards{grid-template-columns:repeat(2,1fr)}}
-  @media (min-width:960px){.cards{grid-template-columns:repeat(3,1fr)}}
-  .card{
-    background:var(--surface);border:1px solid var(--line);border-radius:8px;
-    padding:24px 24px 20px;display:flex;flex-direction:column;gap:10px;
-    transition:border-color .15s,transform .15s;
-  }
-  .card{-webkit-tap-highlight-color:transparent}
-  .card:hover{border-color:var(--accent-dim);transform:translateY(-2px)}
-  .card .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-  .card h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:18px;line-height:1.25}
-  .card p{color:#B9BEC6;font-size:14.5px;flex-grow:1}
-  .card .links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;margin-top:6px}
-  .card .links .linkicon{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:36px;height:36px;border:1px solid var(--line);border-radius:8px;
-    color:var(--muted);background:var(--surface-2);
-    transition:color .15s,border-color .15s,transform .15s;
-  }
-  .card .links .linkicon:hover,.card .links .linkicon:focus-visible{color:var(--accent);border-color:var(--accent-dim);transform:translateY(-1px)}
-  .card .links .linkicon svg{width:17px;height:17px}
-  @media (hover:none){.card:active{transform:scale(.99)}}
-  @media (max-width:600px){.card .links .linkicon{width:44px;height:44px}}
-  /* staggered card reveal */
-  html.js .reveal-card{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
-  html.js .reveal-card.in{opacity:1;transform:none}
-  .cards .reveal-card:nth-child(2){transition-delay:.07s}
-  .cards .reveal-card:nth-child(3){transition-delay:.14s}
-  .cards .reveal-card:nth-child(5){transition-delay:.07s}
-
-  /* ---------- Skills ---------- */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px 40px;max-width:76ch}
-  .skill-row{padding:12px 0;border-bottom:1px dashed var(--line)}
-  .skill-row .k{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:4px}
-  .skill-row .v{color:#C7CBD1;font-size:14.5px}
-
-  /* ---------- Education / footer ---------- */
-  .edu{max-width:72ch}
-  .edu-item{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding:12px 0;border-bottom:1px dashed var(--line)}
-  .edu-item .d{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted)}
-  .edu-item .t b{font-weight:600}
-  .edu-item .t span{color:var(--muted)}
-  footer{padding:56px 0 72px;scroll-margin-top:70px}
-  footer .big{
-    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
-    font-size:clamp(22px,4vw,30px);margin-bottom:18px;max-width:24ch;line-height:1.25;
-  }
-  .footmail{margin-top:22px;font-family:"IBM Plex Mono",monospace;font-size:13px}
-  .langs{margin-top:10px;color:var(--muted);font-size:14px;font-family:"IBM Plex Mono",monospace}
-
-  @media (max-width:560px){
-    header{padding:64px 0 44px}
-    section{padding:44px 0}
-  }
-</style>
+<link rel="stylesheet" href="assets/styles.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('font')==='legible')document.documentElement.setAttribute('data-font','legible');}catch(e){}})();</script>
 </head>
 <body>
 
@@ -286,6 +40,9 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
+      <div class="langtog" role="group" aria-label="Language"><a class="active" aria-current="page" href="/">EN</a><a href="/es/">ES</a></div>
+      <button class="pref-btn" type="button" data-toggle="font" aria-pressed="false" aria-label="Use a dyslexia-friendly font" title="Dyslexia-friendly font"><span class="pref-label">Aa</span></button>
+      <button class="pref-btn" type="button" data-toggle="theme" aria-pressed="false" aria-label="Switch to light theme" title="Light / dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
       <a class="btn" href="cv/Soichi_Tamashiro_CV.pdf" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
         CV
@@ -318,11 +75,11 @@
             <a class="iconlink" href="mailto:soichi.tamashiro@gmail.com" aria-label="Email Soichi Tamashiro" title="soichi.tamashiro@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
             </a>
-            <a class="iconlink" href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+            <a class="iconlink" href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn" target="_blank">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.51 2.5 2.5 0 0 1 4.98 3.5zM.5 8.25h4.45V24H.5zM8.02 8.25h4.27v2.15h.06c.6-1.13 2.05-2.32 4.22-2.32 4.51 0 5.34 2.97 5.34 6.83V24h-4.44v-6.98c0-1.66-.03-3.8-2.32-3.8-2.32 0-2.68 1.81-2.68 3.68V24H8.02z"/></svg>
             </a>
             <!-- Uncomment when GitHub has public repos:
-            <a class="iconlink" href="https://github.com/Soichi-Tamashiro" rel="noopener" aria-label="GitHub profile" title="GitHub">
+            <a class="iconlink" href="https://github.com/Soichi-Tamashiro" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub" target="_blank">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.72-1.55-2.55-.3-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.19-3.1-.12-.3-.52-1.48.11-3.08 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.6.23 2.78.11 3.08.74.8 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
             </a>
             -->
@@ -450,10 +207,12 @@
           <div class="stat"><span class="n">1st</span><span class="l">made in Peru</span></div>
           <div class="stat"><span class="n">20 min</span><span class="l">early warning</span></div>
           <div class="stat"><span class="n">IEEE</span><span class="l">published</span></div>
+          <div class="stat"><span class="n">PUCP</span><span class="l">joint R&amp;D partner</span></div>
         </div>
         <div class="links">
-          <a href="https://elcomercio.pe/tecnologia/actualidad/hiro-primer-sistema-recepcion-aplicacion-alerta-tsunamis-hecho-peru-noticia-637788-noticia/" rel="noopener">El Comercio</a>
-          <a href="https://cris.pucp.edu.pe/es/publications/implementation-of-tsunami-early-warning-receiver-via-the-ewbs-sig/" rel="noopener">IEEE publication</a>
+          <a href="/projects/hiro.html"><b>Case study →</b></a>
+          <a href="https://elcomercio.pe/tecnologia/actualidad/hiro-primer-sistema-recepcion-aplicacion-alerta-tsunamis-hecho-peru-noticia-637788-noticia/" rel="noopener noreferrer" target="_blank">El Comercio</a>
+          <a href="https://cris.pucp.edu.pe/es/publications/implementation-of-tsunami-early-warning-receiver-via-the-ewbs-sig/" rel="noopener noreferrer" target="_blank">IEEE publication</a>
         </div>
       </div>
 
@@ -467,8 +226,8 @@
           <div class="stat"><span class="n">50%</span><span class="l">admin workload cut</span></div>
         </div>
         <div class="links">
-          <a href="https://suplementos.elcomercio.pe/propuesta-urp-154/2023/08/25/yachayhuasi-la-nueva-plataforma-educativa/" rel="noopener">El Comercio (2023)</a>
-          <span style="color:var(--muted)">Directed since 2023</span>
+          <a href="/projects/campus-urp.html"><b>Case study →</b></a>
+          <a href="https://suplementos.elcomercio.pe/propuesta-urp-154/2023/08/25/yachayhuasi-la-nueva-plataforma-educativa/" rel="noopener noreferrer" target="_blank">El Comercio (2023)</a>
         </div>
       </div>
 
@@ -476,9 +235,15 @@
         <span class="tag">Health-tech · UPCH feature</span>
         <h3>INSPIRA — Respiratory Monitoring</h3>
         <p>Bluetooth measurement device, mobile app, and admin panel built with biomedical research groups at Univ. Cayetano Heredia and PUCP. Active and publicly featured (2025).</p>
+        <div class="stats">
+          <div class="stat"><span class="n">UPCH · PUCP</span><span class="l">commissioned by</span></div>
+          <div class="stat"><span class="n">3</span><span class="l">device · app · panel</span></div>
+          <div class="stat"><span class="n">2025</span><span class="l">still featured</span></div>
+        </div>
         <div class="links">
-          <a href="https://cayetano.plus/proyecto-inspira/" rel="noopener">Cayetano+</a>
-          <a href="https://investigacion.cayetano.edu.pe/noticias/asonip-talk-inventores-heredianos-presentaran-sistema-que-revoluciona-el-cuidado-respiratorio-en-el-peru/" rel="noopener">ASONIP feature</a>
+          <a href="/projects/inspira.html"><b>Case study →</b></a>
+          <a href="https://cayetano.plus/proyecto-inspira/" rel="noopener noreferrer" target="_blank">Cayetano+</a>
+          <a href="https://investigacion.cayetano.edu.pe/noticias/asonip-talk-inventores-heredianos-presentaran-sistema-que-revoluciona-el-cuidado-respiratorio-en-el-peru/" rel="noopener noreferrer" target="_blank">ASONIP feature</a>
         </div>
       </div>
 
@@ -491,10 +256,11 @@
           <div class="stat"><span class="n">iOS · Android</span><span class="l">official apps</span></div>
         </div>
         <div class="links">
-          <a class="linkicon" href="https://play.google.com/store/apps/details?id=pe.edu.urp.urp_app" rel="noopener" aria-label="URP Móvil on Google Play" title="Google Play">
+          <a href="/projects/urp-movil.html"><b>Case study →</b></a>
+          <a class="linkicon" href="https://play.google.com/store/apps/details?id=pe.edu.urp.urp_app" rel="noopener noreferrer" aria-label="URP Móvil on Google Play" title="Google Play" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.53.85l14.5-9.5a1 1 0 0 0 0-1.7L5.53 1.65A1 1 0 0 0 4 2.5z"/></svg>
           </a>
-          <a class="linkicon" href="https://apps.apple.com/pe/app/urp-movil/id6749589812" rel="noopener" aria-label="URP Móvil on the App Store" title="App Store">
+          <a class="linkicon" href="https://apps.apple.com/pe/app/urp-movil/id6749589812" rel="noopener noreferrer" aria-label="URP Móvil on the App Store" title="App Store" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.54c-.02-2.02 1.65-2.98 1.72-3.03-.94-1.37-2.4-1.56-2.92-1.58-1.24-.13-2.42.73-3.05.73-.63 0-1.6-.71-2.63-.69-1.35.02-2.6.79-3.29 2-1.4 2.43-.36 6.03 1 8.01.67.96 1.46 2.04 2.5 2 1-.04 1.38-.65 2.59-.65 1.21 0 1.55.65 2.61.63 1.08-.02 1.76-.98 2.42-1.95.76-1.11 1.08-2.19 1.09-2.24-.02-.01-2.09-.8-2.11-3.18zM15.09 6.05c.55-.67.92-1.6.82-2.53-.79.03-1.75.53-2.32 1.2-.51.58-.96 1.53-.84 2.44.88.07 1.79-.45 2.34-1.11z"/></svg>
           </a>
         </div>
@@ -510,10 +276,11 @@
           <div class="stat"><span class="n">3</span><span class="l">engineers led</span></div>
         </div>
         <div class="links">
-          <a class="linkicon" href="https://play.google.com/store/apps/details?id=pe.motorongo.motorongo" rel="noopener" aria-label="Motorongo on Google Play" title="Google Play">
+          <a href="/projects/motorongo.html"><b>Case study →</b></a>
+          <a class="linkicon" href="https://play.google.com/store/apps/details?id=pe.motorongo.motorongo" rel="noopener noreferrer" aria-label="Motorongo on Google Play" title="Google Play" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.5v19a1 1 0 0 0 1.53.85l14.5-9.5a1 1 0 0 0 0-1.7L5.53 1.65A1 1 0 0 0 4 2.5z"/></svg>
           </a>
-          <a class="linkicon" href="https://www.facebook.com/motorongoperu/" rel="noopener" aria-label="Motorongo on Facebook" title="Facebook">
+          <a class="linkicon" href="https://www.facebook.com/motorongoperu/" rel="noopener noreferrer" aria-label="Motorongo on Facebook" title="Facebook" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
           </a>
         </div>
@@ -560,7 +327,7 @@
         <a class="iconlink" href="mailto:soichi.tamashiro@gmail.com" aria-label="Email Soichi Tamashiro" title="soichi.tamashiro@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
         </a>
-        <a class="iconlink" href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+        <a class="iconlink" href="https://www.linkedin.com/in/soichi-tamashiro/" rel="noopener noreferrer" aria-label="LinkedIn profile" title="LinkedIn" target="_blank">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.51 2.5 2.5 0 0 1 4.98 3.5zM.5 8.25h4.45V24H.5zM8.02 8.25h4.27v2.15h.06c.6-1.13 2.05-2.32 4.22-2.32 4.51 0 5.34 2.97 5.34 6.83V24h-4.44v-6.98c0-1.66-.03-3.8-2.32-3.8-2.32 0-2.68 1.81-2.68 3.68V24H8.02z"/></svg>
         </a>
       </div>
@@ -570,52 +337,8 @@
   </div>
 </footer>
 
-<script>
-(function(){
-  var root=document.documentElement;
-  root.classList.add('js');
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var reveals=[].slice.call(document.querySelectorAll('.reveal, .reveal-card'));
-  if(reduce||!('IntersectionObserver'in window)){
-    reveals.forEach(function(el){el.classList.add('in');});
-  }else{
-    var ro=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
-    },{threshold:0.12});
-    reveals.forEach(function(el){ro.observe(el);});
-  }
-  // scrollspy: highlight the nav link for the section in view
-  var links=[].slice.call(document.querySelectorAll('.nav-links a'));
-  var map={};
-  links.forEach(function(a){var id=(a.getAttribute('href')||'').slice(1);if(id)map[id]=a;});
-  var secs=Object.keys(map).map(function(id){return document.getElementById(id);}).filter(Boolean);
-  if('IntersectionObserver'in window&&secs.length){
-    var so=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          links.forEach(function(a){a.classList.remove('active');});
-          if(map[e.target.id])map[e.target.id].classList.add('active');
-        }
-      });
-    },{rootMargin:'-45% 0px -50% 0px',threshold:0});
-    secs.forEach(function(s){so.observe(s);});
-  }
-  // mobile menu toggle
-  var nav=document.querySelector('.nav');
-  var toggle=document.querySelector('.nav-toggle');
-  if(nav&&toggle){
-    var setOpen=function(open){
-      nav.classList.toggle('open',open);
-      toggle.setAttribute('aria-expanded',open?'true':'false');
-      toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
-    };
-    toggle.addEventListener('click',function(){setOpen(!nav.classList.contains('open'));});
-    links.forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
-    document.addEventListener('click',function(e){if(nav.classList.contains('open')&&!nav.contains(e.target))setOpen(false);});
-  }
-})();
-</script>
 
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+/* Case-study pages — extends styles.css (shared design tokens & components) */
+
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--nav-bg);
+  -webkit-backdrop-filter:saturate(160%) blur(10px);backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.backlink{display:inline-flex;align-items:center;gap:8px;color:var(--muted);border-bottom:none;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.03em}
+.backlink:hover,.backlink:focus-visible{color:var(--accent);border-bottom:none}
+.backlink svg{width:15px;height:15px}
+
+.case-hero{padding:46px 0 40px;border-bottom:1px solid var(--line)}
+.case-hero .eyebrow{margin-bottom:14px}
+.case-hero h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:clamp(30px,5.5vw,48px);line-height:1.05;letter-spacing:-.015em}
+.case-sub{color:var(--muted);font-size:18px;max-width:62ch;margin-top:14px}
+.case-meta{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:24px;
+  font-family:"IBM Plex Mono",monospace;font-size:13px}
+.case-meta .cm{display:flex;flex-direction:column;gap:3px}
+.case-meta .cm .k{color:var(--accent);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+.case-meta .cm .v{color:var(--text)}
+
+.case-body p{color:var(--text-soft);font-size:16.5px;line-height:1.7;max-width:70ch;margin-bottom:14px}
+.case-body p b{color:var(--text);font-weight:600}
+.case-body h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:20px;
+  margin:28px 0 10px;color:var(--text)}
+.case-body h3:first-child{margin-top:0}
+.case-body ul{list-style:none;max-width:72ch;margin:8px 0 16px}
+.case-body li{padding-left:20px;position:relative;margin-bottom:10px;color:var(--text-soft);font-size:16px;line-height:1.6}
+.case-body li::before{content:"–";position:absolute;left:0;color:var(--accent-dim)}
+.case-body li b{color:var(--text);font-weight:600}
+
+.callout{border-left:2px solid var(--accent);background:var(--surface);
+  padding:16px 22px;border-radius:0 8px 8px 0;margin:22px 0;max-width:70ch}
+.callout p{margin:0;color:var(--text);font-size:16.5px;font-style:italic}
+.callout .who{display:block;margin-top:10px;color:var(--muted);font-size:12.5px;
+  font-family:"IBM Plex Mono",monospace;font-style:normal}
+
+.tstack{display:flex;flex-wrap:wrap;gap:8px;max-width:74ch}
+.tstack span{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--text-soft);
+  border:1px solid var(--line);border-radius:6px;padding:6px 11px;background:var(--surface)}
+
+.case-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:6px;
+  font-family:"IBM Plex Mono",monospace;font-size:13px}
+
+/* other-projects footer strip */
+.more-cases{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:13px}
+.more-cases a{color:var(--muted)}
+.more-cases a:hover{color:var(--accent)}
+
+/* image placeholders (swap the .ph block for an <img> when the real asset is ready) */
+.case-figure{margin:24px 0 10px;max-width:840px}
+.case-figure .ph{
+  aspect-ratio:16/9;border:1px dashed var(--line);border-radius:10px;
+  background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(224,169,62,.03) 14px 15px),var(--surface);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;
+  text-align:center;padding:20px;color:var(--muted);
+}
+.case-figure .ph.portrait{aspect-ratio:9/16;max-width:230px;margin:0 auto}
+.case-figure .ph svg{width:32px;height:32px;color:var(--accent-dim)}
+.case-figure .ph .lbl{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.03em;color:var(--text-soft)}
+.case-figure .ph .hint{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent-dim)}
+.case-figure figcaption{margin-top:10px;color:var(--muted);font-size:13px;font-style:italic;max-width:70ch}
+.case-figure img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.case-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0 10px;max-width:840px}
+@media (min-width:560px){.case-gallery{grid-template-columns:1fr 1fr}}
+.case-gallery figure{margin:0}
